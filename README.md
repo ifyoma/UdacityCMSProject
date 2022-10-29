@@ -48,7 +48,7 @@ az sql server create --name <YOUR-SQL-SERVERNAME> --admin-user <USERNAME> --admi
 >Create a Database:
 
 ```sh
-az sql db create --name ArticleCmsDb --resource-group ArticleCmsRg --server <YOUR-SQL-SERVERNAME> 
+az sql db create --name UdaProjectCMS --resource-group resource-group-west --server <YOUR-SQL-SERVERNAME> 
 ```
 
 
@@ -209,7 +209,7 @@ Set The following URls-
 >Get Public IP Address of the app:
 
 ```sh
- az webapp show --resource-group ArticleCmsRg --name FinalCmsProgApp  --query outboundIpAddresses --output tsv
+ az webapp show --resource-group resource-group-west --name UdaProjectCMS  --query outboundIpAddresses --output tsv
 ```
 
 >Copy the Smallest and Latrgest IP's as <SMALLEST-IP> and <Largest-IP>
@@ -217,7 +217,8 @@ Set The following URls-
 >Allow App to access internal sql server:
 
 ```sh
-az sql server firewall-rule create --resource-group ArticleCmsRg --server <YOUR-SQL-SERVERNAME>  --name "AllowAppIP" --start-ip-address  <SMALLEST-IP-FROM-PREVIOUS-STEP>  --end-ip-address  <LARGEST-IP-FROM-PREVIOUS-STEP>
+az sql server firewall-rule create --resource-group resource-group-west
+ --server <YOUR-SQL-SERVERNAME>  --name "AllowAppIP" --start-ip-address  <SMALLEST-IP-FROM-PREVIOUS-STEP>  --end-ip-address  <LARGEST-IP-FROM-PREVIOUS-STEP>
 ```
 
 
