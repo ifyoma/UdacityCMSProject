@@ -7,6 +7,7 @@ import string, random
 from werkzeug.utils import secure_filename
 from flask import flash
 
+
 blob_container = app.config['BLOB_CONTAINER']
 blob_service = BlockBlobService(account_name=app.config['BLOB_ACCOUNT'], account_key=app.config['BLOB_STORAGE_KEY'])
 
